@@ -1,0 +1,8 @@
+[Cine|salas;ubicación]
+
+[Sala|numero;numero_asientos;tipo_sala;disponible; película|proyectar();luces();aire_acondicionado()]
+
+[Película|tipo;género;clasificación;duración;estreno;idioma]
+
+[Sala]<>->[Película]
+[Cine]++->[Sala]
