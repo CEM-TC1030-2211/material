@@ -7,7 +7,9 @@ protected:
     string nombre;
     int edad;
 public:
-    Persona(string nombre, int edad): nombre{nombre}, edad{edad} {}
+    Persona(string nombre, int edad): nombre{nombre}, edad{edad} {
+        cout << "Llamando al constructor de Persona..." << endl;
+    }
     // string getNombre() {
     //     return nombre;
     // }
@@ -24,7 +26,9 @@ private:
     int anios_trabajando;
 public:
     Trabajador(string nombre, int edad, int anios_trabajando):
-        Persona{nombre, edad}, anios_trabajando{anios_trabajando} {}
+        Persona{nombre, edad}, anios_trabajando{anios_trabajando} {
+            cout << "Llamando al constructor de Trabajador..." << endl;
+        }
     void trabajar() {
         cout << nombre << " esta trabajando." << endl;
     }
@@ -35,7 +39,9 @@ private:
     string especialidad;
 public:
     Abogado(string nombre, int edad, int anios_trabajando, string especialidad):
-        Trabajador{nombre, edad, anios_trabajando}, especialidad{especialidad} {}
+        Trabajador{nombre, edad, anios_trabajando}, especialidad{especialidad} {
+            cout << "Llamando al constructor de Abogado..." << endl;
+        }
     void trabajar() {
         cout << nombre << " esta defendiendo a su cliente." << endl;
     }
