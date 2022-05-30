@@ -14,6 +14,9 @@ public:
     friend float operator+(float lhs, const Producto &rhs) {
         return lhs + rhs.cantidad * rhs.precio;
     }
+    friend void operator+=(float &lhs, const Producto &rhs) {
+        lhs = lhs + rhs.cantidad * rhs.precio;
+    }
     friend ostream& operator<<(ostream &os, const Producto &producto) {
         producto.imprimir();
         return os;
@@ -53,8 +56,8 @@ int main() {
     float total = 0;
     for (Producto *ptr : miCarrito) {
         cout << *ptr << endl;
-        total = total + *ptr;
-        // total += *ptr;
+        // total = total + *ptr;
+        total += *ptr;
     }
 
     cout << "Total a pagar: " << total << endl;
