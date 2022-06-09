@@ -17,6 +17,10 @@ public:
         os << cancion.track << " - " << cancion.artist << " - " << cancion.genre << " - " << cancion.rating;
         return os;
     }
+    string getGenre() {
+        return genre;
+    }
+    friend class ListaReproduccion;
 };
 
 class ListaReproduccion {
@@ -56,10 +60,27 @@ public:
             cout << cancion << endl;
         }
     }
+
+    void filtro_genero(string genero) {
+        cout << "Mostrando canciones de genero: " << genero << endl;
+        for (Cancion cancion : canciones) {
+            if (cancion.genre == genero)
+                cout << cancion << endl;
+        }
+    }
+
+    void cancion_random() {
+        int posicion = rand() % canciones.size();
+        cout << "Cancion elegida: " << canciones.at(posicion) << endl;
+    }
+
 };
 
 int main() {
     ListaReproduccion miLista{"Mi primera lista"};
     miLista.cargar_archivo("top50.csv", true);
     miLista.mostrar_canciones();
+    miLista.filtro_genero("dance pop");
+    miLista.cancion_random();
+    miLista.cancion_random();
 }
