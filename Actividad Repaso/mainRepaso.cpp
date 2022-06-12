@@ -27,7 +27,7 @@ int main() {
     pago = miEmpresa.pago_empleados("Practicante");
     cout << "La empresa debe pagar en total: " << pago << " a los practicantes al mes." << endl;
 
-    cout << "Listado de empleados:" << endl:
+    cout << "Listado de empleados:" << endl;    
     miEmpresa.imprime_empleados();
 
 }
